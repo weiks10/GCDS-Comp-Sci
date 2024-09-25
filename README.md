@@ -1,2 +1,2 @@
-# CS1
-Portfolio of programs created in CS1
+# Comp Sci
+Portfolio of files created in Comp sci
