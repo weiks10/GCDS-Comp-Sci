@@ -23,21 +23,25 @@ def main():
         if len(dimensions) != 5:                               
             dimensions = input("Incorrct format, please enter your height,length,and width with the zip code to where it is going and what zip it is coming from")
         else:
-            break
-    
-    height = float(dimensions[0])                               #saving the 0 index(first thing said by user) as height and turing it into an float
-    length = float(dimensions[1])                               #saving the first index as length and saving it as an float
-    width = float(dimensions[2])                                #saving the second index from dimesions as float
-    to_where = int(dimensions[3])                               #saving to_where as an int and it is the third index
-    from_where = int(dimensions[4])                             #saving from_where to an int and it is the fourth index
+            try:
+                height = float(dimensions[0])                               #saving the 0 index(first thing said by user) as height and turing it into an float
+                length = float(dimensions[1])                               #saving the first index as length and saving it as an float
+                width = float(dimensions[2])                                #saving the second index from dimesions as float
+                to_where = int(dimensions[3])                               #saving to_where as an int and it is the third index
+                from_where = int(dimensions[4])                             #saving from_where to an int and it is the fourth index
+                from_where > 99999
+                to_where > 99999
+                distance = abs(get_zone(to_where) - get_zone(from_where))     #distance is equal to the subraction of the two zipcodes
+                size = get_mail_type(length,height,width)                     #size is equal to the function of get_mail_type which gets the size of the parcel
+                price = cost(size,distance)                                   #price is equal to the function cost 
+                price = str(price)
+                price = price.lstrip("0")           #removes zero from cost the cost when printed  
+                print(f"Your parcel is a {size} and the price is ${price}") #printing the f string which includes the size and price
+                break
+            except ValueError:
+                print("You did not enter the correct information")
 
-    distance = abs(get_zone(to_where) - get_zone(from_where))     #distance is equal to the subraction of the two zipcodes
-    size = get_mail_type(length,height,width)                     #size is equal to the function of get_mail_type which gets the size of the parcel
-    price = cost(size,distance)                                 #price is equal to the function cost 
-    price = str(price)
-    price = price.lstrip("0")           #removes zero from cost the cost when printed  
-   
-    print(f"Your parcel is a {size} and the price is ${price}") #printing the f string which includes the size and price
+
  
 
 
