@@ -42,10 +42,6 @@ def main():
             except ValueError:
                 print("You did not enter the correct information")
 
-
- 
-
-
 def get_mail_type(length,height,width):
     '''
     Calculates what the type of mail being sent is and what dimensions fit the different types of packages
@@ -123,6 +119,5 @@ def cost(size,distance):
         return 3.95+.35*distance
     elif size == 'UNMAILABLE':
         return " cannot be generated"
-
 
 main()
