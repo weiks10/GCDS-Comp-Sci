@@ -1,10 +1,11 @@
+
 '''
 Name: Luke Weiksner
 Description: Program that determines the size of package and the cost based on the the parameters that the user enters.
 Bugs: 
 Features: (challenges)
 Sources:W3 Schools
-Log: 1.0 intial release
+Log: 1.0 initial release
 '''
 
 def main():
@@ -14,19 +15,19 @@ def main():
         for item in dimensions:                                 #iterates through the list above
             #if an item in the list has a letter re-ask the user to only enter numbers                               
             if item.isalpha():                                  
-                dimensions = input("Incorrct format(numbers only), please enter your height,length,and width with the zip code to where it is going and what zip it is coming from")
+                dimensions = input("Incorrect format(numbers only), please enter your height,length,and width with the zip code to where it is going and what zip it is coming from")
                 continue
 
         dimensions = dimensions.split(",")   #splitting the dimensions by every comma  
 
         #if the user enter more or less than 5 groups of numbers than it prompts the user to re-enter the numbers split by commas                 
         if len(dimensions) != 5:                               
-            dimensions = input("Incorrct format, please enter your height,length,and width with the zip code to where it is going and what zip it is coming from")
+            dimensions = input("Incorrect format, please enter your height,length,and width with the zip code to where it is going and what zip it is coming from")
         else:
             try:
-                height = float(dimensions[0])                               #saving the 0 index(first thing said by user) as height and turing it into an float
+                height = float(dimensions[0])                               #saving the 0 index(first thing said by user) as height and turning it into an float
                 length = float(dimensions[1])                               #saving the first index as length and saving it as an float
-                width = float(dimensions[2])                                #saving the second index from dimesions as float
+                width = float(dimensions[2])                                #saving the second index from dimensions as float
                 to_where = int(dimensions[3])                               #saving to_where as an int and it is the third index
                 from_where = int(dimensions[4])                             #saving from_where to an int and it is the fourth index
                 from_where > 99999
