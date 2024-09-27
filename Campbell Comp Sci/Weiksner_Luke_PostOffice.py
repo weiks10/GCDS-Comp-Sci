@@ -1,4 +1,3 @@
-
 '''
 Name: Luke Weiksner
 Description: Program that determines the size of package and the cost based on the the parameters that the user enters.
