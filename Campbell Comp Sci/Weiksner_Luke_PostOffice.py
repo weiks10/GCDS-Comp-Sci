@@ -1,7 +1,7 @@
 '''
 Name: Luke Weiksner
 Description: Program that determines the size of package and the cost based on the the parameters that the user enters.
-Bugs:
+Bugs: 
 Features: (challenges)
 Sources:W3 Schools
 Log: 1.0 intial release
@@ -31,8 +31,8 @@ def main():
     to_where = int(dimensions[3])                               #saving to_where as an int and it is the third index
     from_where = int(dimensions[4])                             #saving from_where to an int and it is the fourth index
 
-    distance = abs(getZone(to_where) - getZone(from_where))     #distance is equal to the subraction of the two zipcodes
-    size = getMailType(length,height,width)                     #size is equal to the function of getMailType which gets the size of the parcel
+    distance = abs(get_zone(to_where) - get_zone(from_where))     #distance is equal to the subraction of the two zipcodes
+    size = get_mail_type(length,height,width)                     #size is equal to the function of get_mail_type which gets the size of the parcel
     price = cost(size,distance)                                 #price is equal to the function cost 
     price = str(price)
     price = price.lstrip("0")           #removes zero from cost the cost when printed  
@@ -41,7 +41,7 @@ def main():
  
 
 
-def getMailType(length,height,width):
+def get_mail_type(length,height,width):
     '''
     Calculates what the type of mail being sent is and what dimensions fit the different types of packages
 
@@ -68,7 +68,7 @@ def getMailType(length,height,width):
     else:
         return "UNMAILABLE"
 
-def getZone(zipcode):
+def get_zone(zipcode):
     '''
     Calculates the zones of the zipcode being entered by the user.
 
@@ -97,7 +97,7 @@ def cost(size,distance):
     Calculates the cost of each package with zipcode with the size and the distance.
 
     Args:
-        size: what the package type is(using the getMailType function)
+        size: what the package type is(using the get_mail_type function)
         distance: the subtraction of the two zipcodes which turns it into a positive number using absolute value
 
     Returns:
