@@ -1,19 +1,14 @@
 '''
 Name: Luke Weiksner
-
-Description:
-
+Description: Program that determines the size of package and the cost based on the the parameters that the user enters.
 Bugs:
-
 Features: (challenges)
-
-Sources:
-
-Log: 1.0
+Sources:W3 Schools
+Log: 1.0 intial release
 '''
 
 def main():
-    
+    print("Welcome to the GCDS Post Office!")
     while True:
         dimensions = input("give me data for a post office in order of height,length,width,where it is going, and from where it is coming from. ")
         for item in dimensions:                                 #iterates through the list above
@@ -121,8 +116,8 @@ def cost(size,distance):
         return 2.95+.25*distance
     elif size == 'LARGE PACKAGE':
         return 3.95+.35*distance
-'''elif size == 'UNMAILABLE':
-        return 
-'''
+    elif size == 'UNMAILABLE':
+        return " cannot be generated"
+
 
 main()
