@@ -24,8 +24,8 @@ def main():
             dimensions = input("Incorrect format, please enter your height,length,and width with the zip code to where it is going and what zip it is coming from")
         else:
             try:
-                height = float(dimensions[0])                               #saving the 0 index(first thing said by user) as height and turning it into an float
-                length = float(dimensions[1])                               #saving the first index as length and saving it as an float
+                length = float(dimensions[0])                               #saving the 0 index(first thing said by user) as height and turning it into an float
+                height = float(dimensions[1])                               #saving the first index as length and saving it as an float
                 width = float(dimensions[2])                                #saving the second index from dimensions as float
                 to_where = int(dimensions[3])                               #saving to_where as an int and it is the third index
                 from_where = int(dimensions[4])                             #saving from_where to an int and it is the fourth index
