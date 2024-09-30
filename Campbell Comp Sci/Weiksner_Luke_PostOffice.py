@@ -10,7 +10,7 @@ Log: 1.0 initial release
 def main():
     print("Welcome to the GCDS Post Office!")
     while True:
-        dimensions = input("give me data for a post office in order of height,length,width,where it is going, and from where it is coming from. ")
+        dimensions = input("Please give me data for a post office in order of height,length,width,where it is going, and from where it is coming from. ")
         for item in dimensions:                                 #iterates through the list above
             #if an item in the list has a letter re-ask the user to only enter numbers                               
             if item.isalpha():                                  
