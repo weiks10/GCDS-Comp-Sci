@@ -1,4 +1,4 @@
-'''
+''
 Name: Luke Weiksner
 Description: Program that determines the size of package and the cost based on the the parameters that the user enters.
 Bugs: 
@@ -10,7 +10,7 @@ Log: 1.0 initial release
 def main():
     print("Welcome to the GCDS Post Office!")
     while True:
-        dimensions = input("Please give me data for a post office in order of height,length,width,where it is going, and from where it is coming from. ")
+        dimensions = input("give me data for a post office in order of height,length,width,where it is going, and from where it is coming from. ")
         for item in dimensions:                                 #iterates through the list above
             #if an item in the list has a letter re-ask the user to only enter numbers                               
             if item.isalpha():                                  
@@ -36,7 +36,7 @@ def main():
                 price = cost(size,distance)                                   #price is equal to the function cost 
                 price = str(price)
                 price = price.lstrip("0")           #removes zero from cost the cost when printed  
-                print(f"Your parcel is a {size} and the price is ${price}") #printing the f string which includes the size and price
+                print(f"{price}") #printing the f string which includes the size and price
                 break
             except ValueError:
                 print("You did not enter the correct information")
@@ -61,9 +61,9 @@ def get_mail_type(length,height,width):
         return "ENVELOPE"
     elif (6.125 <= length <= 24) and (11 <= height <=18) and (.25 <= width <=.5):
         return "LARGE ENVELOPE"
-    elif (length +2*height +2*width<84):
+    elif (length +2*height +2*width<=84):
         return "PACKAGE"
-    elif (84<length +2*height +2*width<130):
+    elif (84<=length +2*height +2*width<=130):
         return "LARGE PACKAGE"
     else:
         return "UNMAILABLE"
@@ -105,18 +105,20 @@ def cost(size,distance):
     '''
     #finding the cost of the package multiplied by the zones crossed
     if size == 'REGULAR POST CARD':
-        return .20+.03*distance
+        final = .20+.03*distance
     elif size == 'LARGE POST CARD':
-        return .37+.03*distance
+        final = .37+.03*distance
     elif size == 'ENVELOPE':
-        return .37+.04*distance
+        final = .37+.04*distance
     elif size == 'LARGE ENVELOPE':
-        return .6+.05*distance
+        final = .6+.05*distance
     elif size == 'PACKAGE':
-        return 2.95+.25*distance
+        final = 2.95+.25*distance
     elif size == 'LARGE PACKAGE':
-        return 3.95+.35*distance
+        final = 3.95+.35*distance
     elif size == 'UNMAILABLE':
         return " cannot be generated"
+    
+    return str('%.2f'%final).lstrip('0')
 
 main()
