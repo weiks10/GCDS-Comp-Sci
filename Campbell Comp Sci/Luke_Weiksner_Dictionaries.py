@@ -52,13 +52,13 @@ def pie_chart(filename,fhand):
     explode = (0.05,0.05,0,0,0,0,0,0,0,0)               #seperating 2 slices of the pie chart to emphasize them
     pie(new_counts.values(), labels=new_counts.keys(), explode=explode, autopct='%1.1f%%');     #creating a pie chart using new_counts with keys and values, exploding the two most occuring words and turning it into a percentage
     show()                                              #showing the pie_chart
-fhand = open('kamala_new.txt','r')              #opening the kamala text file in the read more
-kamala_speech = 'kamala_new.csv'                #making the speech a csvfile
-plt.title("Kamala Speech")                      #title of the Kamala Speech
-pie_chart(kamala_speech,fhand)                  #entering the kamala_speech and fhand into the pie_chart function
-fhand = open('cleaned_trump_speech_transcript.txt','r')     #opening the trump text file 
-trump_speech = 'cleaned_trump_speech_transcript.csv'        #making the speech a csv
-plt.title("Trump Speech")                                   #making the title trump speech
-pie_chart(trump_speech,fhand)                               #entering the paramters into the pie_chart function
+fhand = open('kamala_new.txt','r')                      #opening the kamala text file in the read more
+kamala_speech = 'kamala_new.csv'                        #making the speech a csvfile
+plt.title("Kamala Speech")                              #title of the Kamala Speech
+pie_chart(kamala_speech,fhand)                          #entering the kamala_speech and fhand into the pie_chart function
+fhand = open('cleaned_trump_speech_transcript.txt','r') #opening the trump text file 
+trump_speech = 'cleaned_trump_speech_transcript.csv'    #making the speech a csv
+plt.title("Trump Speech")                               #making the title trump speech
+pie_chart(trump_speech,fhand)                           #entering the paramters into the pie_chart function
 
                 
