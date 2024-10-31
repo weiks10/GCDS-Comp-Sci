@@ -1,0 +1,6 @@
+Determines the top ten most used words in both Trump and Harris' speeches
+
+The file takes in two text files to be taken in to be cleaned and sorted.
+  It takes the two text files with the speeches and then puts it to all lower case, removes punctuation, and sorts the words in ascending order in a dictionary. Then the top ten words are put into a csv file and put into matplotlib for a pie chart.
+
+It requires a or multiple text file to be read.
