@@ -12,10 +12,8 @@ import pandas as pd
 import re
 import csv
 import matplotlib.pyplot as plt
-
 counts = dict() #making counts a dictionary
 unnecessary_words = ['ever','can','every','or','make','more','am','now','and','the','to','of','i','a','in','for','our','we','that','is','he','are','will','who','my','with','us','be','as','she','not','you','on','it','this', 'an','when','have','has','but','would','was','one','their','me','all','know','they','his','about','up','at','because','out','what','so','from','always','let','by','never','going','them','been','your','were','no']
-
 def pie_chart(filename,fhand):
     '''
     Creates a dictionary from a text file and then sorts it, deletes unecessary words, and gives a pie chart. 
@@ -35,8 +33,7 @@ def pie_chart(filename,fhand):
                     counts[word] = 1                    #make the value of the word equal to 1
                 else:
                     counts[word] += 1                   #add 1 to the value of the word if it has already been used
-
-    sorted_dict = dict(sorted(counts.items(), key=lambda item:item[1], reverse = True))
+    sorted_dict = dict(sorted(counts.items(), key=lambda item:item[1], reverse = True)) #sorting the dictionary in ascending order
     new_counts = dict()                                 #making new_counts a dictionary
     count = 0                                           #setting count equal to 0           
     for i in sorted_dict:                               #for the index in sorted_dict
@@ -45,23 +42,16 @@ def pie_chart(filename,fhand):
             count += 1                                  #add one to the count
         else:
             break
-
     with open (filename, 'w', newline = '') as csvfile: #opening the file in write as a csv file
         csvwriter = csv.writer(csvfile)                 #making csvwriter the function of writing to the csv file
         fields = ['word', 'count']                      #the names that will be displayed in the columns in the csv file
         csvwriter.writerow(fields)                      #writing the fields in the csv file
         for word in new_counts:                         #for the word in new_counts
             csvwriter.writerow([word, new_counts[word]]) #writing the word and the the new_counts(the value) of the word
-
     axis('equal')                                       #function that sets the x, y, and z axis equal to have equal lengths
     explode = (0.05,0.05,0,0,0,0,0,0,0,0)               #seperating 2 slices of the pie chart to emphasize them
     pie(new_counts.values(), labels=new_counts.keys(), explode=explode, autopct='%1.1f%%');     #creating a pie chart using new_counts with keys and values, exploding the two most occuring words and turning it into a percentage
     show()                                              #showing the pie_chart
-
-
-
-    #for key,value in counts:
-    #sorting by value in ascending order
 fhand = open('kamala_new.txt','r')              #opening the kamala text file in the read more
 kamala_speech = 'kamala_new.csv'                #making the speech a csvfile
 plt.title("Kamala Speech")                      #title of the Kamala Speech
@@ -70,5 +60,3 @@ fhand = open('cleaned_trump_speech_transcript.txt','r')     #opening the trump t
 trump_speech = 'cleaned_trump_speech_transcript.csv'        #making the speech a csv
 plt.title("Trump Speech")                                   #making the title trump speech
 pie_chart(trump_speech,fhand)                               #entering the paramters into the pie_chart function
-
-                
