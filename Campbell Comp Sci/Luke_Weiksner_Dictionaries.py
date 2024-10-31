@@ -3,7 +3,7 @@ Name: Luke Weiksner
 Description: Opens a text file and removes all unnecessary words, punctuation from it as well as making it all lowercase. It then sorts the words, puts them into a csv, and then into a pie chart.
 Bugs: None
 Features: matplotlib and sorting the dictionary
-Sources:W3 Schools, Geeks for Geeks, Stack Overflow, Jeremy Morgan
+Sources:W3 Schools, Geeks for Geeks, Stack Overflow, Jeremy Morgan, Python
 Log: 1.0 initial release
 '''
 #importing libraries to the computer
