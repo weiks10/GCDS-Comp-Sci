@@ -1,1 +1,6 @@
+Creates a TicTacToe game for two users to play against eachother
 
+The file starts by asking if they want to play and then which player is X and O.
+  The users then start playing by entering different spaces on the board
+
+The board is constantly checking for a win and the code will break if there is a win or the board is full
