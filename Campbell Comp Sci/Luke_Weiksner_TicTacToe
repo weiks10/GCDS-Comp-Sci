@@ -17,7 +17,7 @@ while True:
         print("Welcome to Tic Tac Toe")
         while True:
             question_2 = str.upper(input("Would player 1 like to be X or O? "))
-            #storing the player 1 and player 2 as either X or O depending on whether player 1 would like to be X or O
+            #storing the player 1 and player 2 either X or O depending on whether player 1 would like to be X or O
             if question_2 == 'X':
                 player_1 ='X'
                 player_2 = 'O'
@@ -43,8 +43,7 @@ board = [
 
 def print_board():
     """
-    Makes the board as a 2d array
-    
+    Makes the board as a 2d array    
     Args:
         board(array): An array of the board
     Returns:
@@ -57,12 +56,10 @@ def print_board():
 
 def player_move(player, move):
     """
-    Takes in the player and the move of the player and replace the move with X or O
-    
+    Takes in the player and the move of the player and replace the move with X or O    
     Args:
         player: who the player is(X or O) as a str
-        move: what the player choose as a number
-    
+        move: what the player choose as a number    
     Returns:
         Putting the player(X or O) on the board for the move they choose 
     """
@@ -93,12 +90,10 @@ def player_move(player, move):
     
 def check_win(board,player):
     """
-    Checking the win of a player using coordinates
-    
+    Checking the win of a player using coordinates    
     Args: 
         board: An array of the current TicTacToe Board
-        player: who the player is (X or 0) as a str
-    
+        player: who the player is (X or 0) as a str   
     Returns:
         It returns the winner if their is a winner
     """
@@ -132,7 +127,7 @@ def check_win(board,player):
 print_board()
 
 while True:
-    #if the player move counter is less than or equal to 8 than ask them for the space and change it to an int and putting it into functions
+    #if the player move counter is less than or equal to 8 than ask them for the space they want to move and change it to an int and putting it into certain functions
     if player_move_counter <= 8:
         while True:
             try:                                                                        
