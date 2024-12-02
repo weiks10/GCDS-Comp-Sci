@@ -3,20 +3,20 @@ Name: Luke Weiksner
 Description: A tic tac toe game between two real users(player vs player)
 Bugs: None
 Features: None
-Sources:
+Sources: Stack Overflow, w3 schools, python, geeksforgeeks, Mr. Campbell
 Log: 1.0 initial release
 '''
 
 player_move_counter = 0
 
 while True:
-    question = input("Do you want to Play Tic,Tac,Toe? ")                       #asking if the user would like to play Tic Tac Toe
+    question = str.lower(input("Do you want to Play Tic,Tac,Toe? "))            #asking if the user would like to play Tic Tac Toe
     if question == "no":                                                        #if user answers no
         exit()                                                                  #then code will stop
     elif question == "yes":                                                     #if user answer with yes
         print("Welcome to Tic Tac Toe")
         while True:
-            question_2 = str.upper(input("Would player 1 like to be X or O? "))     #asking the user to select X or O
+            question_2 = str.upper(input("Would player 1 like to be X or O? "))
             #storing the player 1 and player 2 either X or O depending on whether player 1 would like to be X or O
             if question_2 == 'X':
                 player_1 ='X'
@@ -47,8 +47,8 @@ def print_board():
     
     Args:
         board(array): An array of the board
-    Prints:
-        prints the box
+    Returns:
+        Returns the box
     """
     for row in board:                       #for all the rows in the board
         for col in range(len(row)):         #for the columns in the range of the number of the rows
@@ -158,7 +158,7 @@ while True:
                 break
             except ValueError:
                 print("Enter a valid number")
-    #if the player move counter is greater than 9 than exit the code    
+    #if the player move counter is greater than or equal than 9 the code will end    
     elif player_move_counter >= 9:
         print("board is now full, you tied, GAME OVER") 
         exit()
