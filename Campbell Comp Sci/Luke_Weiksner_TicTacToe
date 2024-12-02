@@ -17,7 +17,7 @@ while True:
         print("Welcome to Tic Tac Toe")
         while True:
             question_2 = str.upper(input("Would player 1 like to be X or O? "))
-            #storing the player 1 and player 2 either X or O depending on whether player 1 would like to be X or O
+            #storing the player 1 and player 2 as either X or O depending on whether player 1 would like to be X or O
             if question_2 == 'X':
                 player_1 ='X'
                 player_2 = 'O'
