@@ -3,7 +3,7 @@ import time
 '''
 Name: Luke Weiksner
 Description: A battleship game between a user and a computer with random guesses on a 5x5 board
-Bugs: if you guess the same hit spot twice it will count as a hit even though thats not possible
+Bugs: if the user guesses the same hit spot twice it will count as a hit even though thats not possible
 Features: None
 Sources: Stack Overflow, w3 schools, python, geeksforgeeks, Mr. Campbell, NICHOLAS TRIPLETT
 Log: 1.0 initial release
