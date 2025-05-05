@@ -3,8 +3,9 @@ import time
 '''
 Name: Luke Weiksner
 Description: A battleship game between a user and a computer with random guesses on a 5x5 board
-Bugs: if the user guesses the same hit spot twice it will count as a hit even though thats not possible
+Bugs: None
 Features: None
+Bugs: none
 Sources: Stack Overflow, w3 schools, python, geeksforgeeks, Mr. Campbell, NICHOLAS TRIPLETT
 Log: 1.0 initial release
 
@@ -91,14 +92,14 @@ def user_guess(bot_board, guesses):
         row = int(input(f"Guess row (1-5): ")) - 1
         col = int(input(f"Guess column (1-5): ")) - 1
         if 0 <= row < 5 and 0 <= col < 5:
+            if guesses[row][col] == '\033[31mH\033[0m' or guesses[row][col] == "\033[34mM\033[0m":
+                print("you have already guessed that space, try again.")
+                user_guess(bot_board, guesses)
             #if the bot board has a ship and the user guessed it
-            if bot_board[row][col] == "\033[32mS\033[0m":
+            elif bot_board[row][col] == "\033[32mS\033[0m":
                 guesses[row][col] = '\033[31mH\033[0m'      #replace empty board with hit
                 print_board(guesses)
                 wincon += 1
-            elif guesses[row][col] == '\033[31mH\033[0m' or guesses[row][col] == "\033[34mM\033[0m" or bot_board[row][col] == "\033[32mS\033[0m":
-                print("you have already guessed that space, try again.")
-                user_guess(bot_board, guesses)
             elif bot_board[row][col] == 0:                  #if the space is empty on the board
                 guesses[row][col] = "\033[34mM\033[0m"      #replace space with blue "m".
                 print("bot board with user guess:")
