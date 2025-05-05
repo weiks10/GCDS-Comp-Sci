@@ -5,7 +5,6 @@ Name: Luke Weiksner
 Description: A battleship game between a user and a computer with random guesses on a 5x5 board
 Bugs: None
 Features: None
-Bugs: none
 Sources: Stack Overflow, w3 schools, python, geeksforgeeks, Mr. Campbell, NICHOLAS TRIPLETT
 Log: 1.0 initial release
 
@@ -92,10 +91,11 @@ def user_guess(bot_board, guesses):
         row = int(input(f"Guess row (1-5): ")) - 1
         col = int(input(f"Guess column (1-5): ")) - 1
         if 0 <= row < 5 and 0 <= col < 5:
+            #if the user guesses the same spot twice
             if guesses[row][col] == '\033[31mH\033[0m' or guesses[row][col] == "\033[34mM\033[0m":
                 print("you have already guessed that space, try again.")
                 user_guess(bot_board, guesses)
-            #if the bot board has a ship and the user guessed it
+            #if the bot board has a ship
             elif bot_board[row][col] == "\033[32mS\033[0m":
                 guesses[row][col] = '\033[31mH\033[0m'      #replace empty board with hit
                 print_board(guesses)
